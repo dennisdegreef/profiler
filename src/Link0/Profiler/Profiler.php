@@ -12,7 +12,7 @@ namespace Link0\Profiler;
  *
  * @package Link0\Profiler
  */
-final class Profiler
+final class Profiler implements ProfilerInterface
 {
     /**
      * @var ProfilerAdapterInterface $profilerAdapter
@@ -133,7 +133,7 @@ final class Profiler
 
     /**
      * @param  ProfilerAdapterInterface[] $preferredProfilerAdapters
-     * @return Profiler                   $this
+     * @return ProfilerInterface          $this
      */
     public function setPreferredProfilerAdapters($preferredProfilerAdapters)
     {
@@ -173,7 +173,7 @@ final class Profiler
 
     /**
      * @param ProfileFactoryInterface $profileFactory
-     * @return Profiler $this
+     * @return ProfilerInterface $this
      */
     public function setProfileFactory(ProfileFactoryInterface $profileFactory)
     {
@@ -193,7 +193,7 @@ final class Profiler
     /**
      * @param array $applicationData
      *
-     * @return Profiler $this
+     * @return ProfilerInterface $this
      */
     public function setApplicationData($applicationData)
     {
@@ -213,7 +213,7 @@ final class Profiler
     /**
      * Starts profiling on the specific adapter
      *
-     * @return Profiler $profiler
+     * @return ProfilerInterface $profiler
      */
     public function start()
     {
@@ -227,7 +227,7 @@ final class Profiler
      *
      * @param boolean $boolean
      *
-     * @return Profiler $profiler
+     * @return ProfilerInterface $profiler
      */
     public function startOn($boolean)
     {
@@ -249,7 +249,7 @@ final class Profiler
     /**
      * Stops profiling and persists and returns the Profile object
      *
-     * @return Profile
+     * @return ProfileInterface
      */
     public function stop()
     {
